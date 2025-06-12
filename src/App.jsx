@@ -331,7 +331,8 @@ const App = () => {
         setIsLoading(true);
         setError(null);
         try {
-            const res = await fetch(`http://localhost:5001/recycling-centers?lat=${userLocation.latitude}&lon=${userLocation.longitude}`);
+           const res = await fetch(`https://ecosort-backend-yonb.onrender.com/recycling-centers?lat=${userLocation.latitude}&lon=${userLocation.longitude}`);
+
             if (!res.ok) throw new Error('API error');
             const data = await res.json();
             setRecyclingCenters(data);
