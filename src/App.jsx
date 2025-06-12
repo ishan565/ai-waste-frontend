@@ -296,7 +296,7 @@ const App = () => {
             img.crossOrigin = 'anonymous';
             img.onload = async () => {
                 const tensor = tf.browser.fromPixels(img)
-                  .resizeNearestNeighbor([224, 224])
+                  .resizeNearestNeighbor([300, 300])
                     .toFloat().div(tf.scalar(255.0)).expandDims();
                 const prediction = model.predict(tensor);
                 const predictionArray = await prediction.data();
